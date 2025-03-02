@@ -31,58 +31,71 @@ int main() {
     printf("3 - PIB\n");
     printf("4 - PIB per capita\n");
     printf("5 - Densidade populacional\n");
+    printf("6 - Sair\n");
+    printf("Digite sua escolha: ");
+    scanf("%d", &escolha);
 
-    int escolha;
-    printf("\nDigite o número do atributo escolhido: ");
-    scanf("%d", &escolha);  // Correção: &escolha sem aspas
+    // Switch para menus
+    switch (escolha) {
+        case 1: // Comparação de População
+            if (populacaoCidade1 > populacaoCidade2) {
+                printf("%s vence em população!\n", Cidade1);
+            } else if (populacaoCidade1 < populacaoCidade2) {
+                printf("%s vence em população!\n", Cidade2);
+            } else {
+                printf("Empate em população!\n");
+            }
+            break;
 
-    // Comparar atributos usando if e if-else
-    if (escolha == 1) {
-        if (populacaoCidade1 > populacaoCidade2) {
-            printf("%s vence em população!\n", Cidade1);
-        } else if (populacaoCidade1 < populacaoCidade2) {
-            printf("%s vence em população!\n", Cidade2);
-        } else {
-            printf("Empate em população!\n");
-        }
-    } else if (escolha == 2) {
-        if (areaCidade1 > areaCidade2) {
-            printf("%s vence em área!\n", Cidade1);
-        } else if (areaCidade1 < areaCidade2) {
-            printf("%s vence em área!\n", Cidade2);
-        } else {
-            printf("Empate em área!\n");
-        }
-    } else if (escolha == 3) {
-        if (pibCidade1 > pibCidade2) {
-            printf("%s vence em PIB!\n", Cidade1);
-        } else if (pibCidade1 < pibCidade2) {
-            printf("%s vence em PIB!\n", Cidade2);
-        } else {
-            printf("Empate em PIB!\n");
-        }
-    } else if (escolha == 4) {
-        if (pibPerCapitaCidade1 > pibPerCapitaCidade2) {
-            printf("%s vence em PIB per capita!\n", Cidade1);
-        } else if (pibPerCapitaCidade1 < pibPerCapitaCidade2) {
-            printf("%s vence em PIB per capita!\n", Cidade2);
-        } else {
-            printf("Empate em PIB per capita!\n");
-        }
-    } else if (escolha == 5) {
-        if (densidadeCidade1 > densidadeCidade2) {
-            printf("%s vence em densidade populacional!\n", Cidade1);
-        } else if (densidadeCidade1 < densidadeCidade2) {
-            printf("%s vence em densidade populacional!\n", Cidade2);
-        } else {
-            printf("Empate em densidade populacional!\n");
-        }
-    } else {
-        printf("Opção inválida! Escolha entre 1 e 5.\n");
+        case 2: // Comparação de Área
+            if (areaCidade1 > areaCidade2) {
+                printf("%s vence em área!\n", Cidade1);
+            } else if (areaCidade1 < areaCidade2) {
+                printf("%s vence em área!\n", Cidade2);
+            } else {
+                printf("Empate em área!\n");
+            }
+            break;
+
+        case 3: // Comparação de PIB
+            if (pibCidade1 > pibCidade2) {
+                printf("%s vence em PIB!\n", Cidade1);
+            } else if (pibCidade1 < pibCidade2) {
+                printf("%s vence em PIB!\n", Cidade2);
+            } else {
+                printf("Empate em PIB!\n");
+            }
+            break;
+
+        case 4: // Comparação de PIB per capita
+            if (pibPerCapitaCidade1 > pibPerCapitaCidade2) {
+                printf("%s vence em PIB per capita!\n", Cidade1);
+            } else if (pibPerCapitaCidade1 < pibPerCapitaCidade2) {
+                printf("%s vence em PIB per capita!\n", Cidade2);
+            } else {
+                printf("Empate em PIB per capita!\n");
+            }
+            break;
+
+        case 5: // Comparação de Densidade Populacional
+            if (densidadeCidade1 > densidadeCidade2) {
+                printf("%s vence em densidade populacional!\n", Cidade1);
+            } else if (densidadeCidade1 < densidadeCidade2) {
+                printf("%s vence em densidade populacional!\n", Cidade2);
+            } else {
+                printf("Empate em densidade populacional!\n");
+            }
+            break;
+
+        case 6: // Sair
+            printf("Encerrando o programa. Obrigado por jogar!\n");
+            return 0;
+
+        default: // Entrada inválida
+            printf("Opção inválida! Escolha entre 1 e 6.\n");
+            break;
     }
-
-    return 0;  
 }
 
-
-
+return 0;
+}
